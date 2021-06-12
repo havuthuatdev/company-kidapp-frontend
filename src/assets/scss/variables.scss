@@ -1,0 +1,36 @@
+$btnColor: #f98c40;
+$inputColor: #f0f0f0;
+html {
+    font-size: 62.5%;
+    font-family: "Source Sans Pro", sans-serif;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+@mixin sizeForm($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin sizeBtn($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin bgc($bgcolor: #f98c40) {
+    background-color: $btnColor;
+}
+
+@mixin btn() {
+    background-color: $btnColor;
+    @include sizeBtn(406px, 56px);
+}
+
+@mixin item() {
+    background-color: $inputColor;
+    border: 1px solid $inputColor;
+    border-radius: 10px;
+    display: flex;
+}
