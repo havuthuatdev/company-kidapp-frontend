@@ -3,35 +3,45 @@
     <div class="item_suggestedClasses__flex">
       <div class="item-left item_suggestedClasses__flex--group">
         <div class="item-div item-suggestedClasses__flex--group--datetime">
-          <p class="item-suggestedClasses__flex--group--datetime--oclock">5:15PM</p>
-          <p class="item-suggestedClasses__flex--group--datetime--seconds">(45mins)</p>
+          <p class="item-suggestedClasses__flex--group--datetime--oclock">
+            5:15PM
+          </p>
+          <p class="item-suggestedClasses__flex--group--datetime--seconds">
+            (45mins)
+          </p>
         </div>
         <div class="item-suggestedClasses__flex--group--rate">
-          <font-awesome-icon
-            class="icon-star"
-            :icon="['fas', 'star']"
-          />
-          <p class="item-suggestedClasses__flex--group--rate--number">4.8 (23)</p>
+          <font-awesome-icon class="icon-star" :icon="['fas', 'star']" />
+          <p class="item-suggestedClasses__flex--group--rate--number">
+            4.8 (23)
+          </p>
         </div>
         <div class="item-suggestedClasses__flex--group--price">
           <h4 class="item-suggestedClasses__flex--group--price--dolar">$150</h4>
-          <h5 class="item-suggestedClasses__flex--group--price--lesson">per lesson</h5>
+          <h5 class="item-suggestedClasses__flex--group--price--lesson">
+            per lesson
+          </h5>
         </div>
       </div>
       <div class="item-right item_suggestedClasses__flex--group">
         <div class="item_suggestedClasses__flex--group--information">
-          <h4 class="item_suggestedClasses__flex--group--information--subject">Tennis</h4>
-          <p
-            class="item_suggestedClasses__flex--group--information--address"
-          >ABC Tennis Camberwell - 1.5km</p>
-          <p class="item_suggestedClasses__flex--group--information--teacher">w/Danny Smith</p>
+          <h4 class="item_suggestedClasses__flex--group--information--subject">
+            Tennis
+          </h4>
+          <p class="item_suggestedClasses__flex--group--information--address">
+            ABC Tennis Camberwell - 1.5km
+          </p>
+          <p class="item_suggestedClasses__flex--group--information--teacher">
+            w/Danny Smith
+          </p>
         </div>
         <div class="item_suggestedClasses__flex--group--booking">
-          <p class="item_suggestedClasses__flex--group--booking--slot">3 slots avaliable</p>
-          <font-awesome-icon
-            class="icon-email"
-            :icon="['fas', 'envelope']"
-          />
+          <p class="item_suggestedClasses__flex--group--booking--slot">
+            3 slots avaliable
+          </p>
+          <div class="email">
+            <font-awesome-icon class="icon-email" :icon="['fas', 'envelope']" />
+          </div>
           <el-button type="primary">Book</el-button>
         </div>
       </div>
@@ -45,7 +55,7 @@ export default {};
 @import "../assets/scss/variables.scss";
 .item_suggestedClasses {
   @include sizeForm(100%, 154px);
-//   margin: 12px 0px;
+  //   margin: 12px 0px;
   align-items: center;
   background-color: $inputColor;
   border: 1px solid $inputColor;
@@ -73,11 +83,12 @@ export default {};
       h4 {
         margin-bottom: 5px;
       }
-      .icon-email {
+      .email {
         padding: 11px;
         background-color: cadetblue;
-        border: 1px solid cadetblue;
+        border: 0px solid cadetblue;
         border-radius: 4px;
+        margin: 0px 5px;
       }
     }
     .item_suggestedClasses__flex--group {

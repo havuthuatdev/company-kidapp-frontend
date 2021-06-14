@@ -3,15 +3,25 @@
     <el-form :model="registerForm" :rules="rules">
       <div class="item-input item-group">
         <el-form-item prop="firstName">
-          <el-input placeholder="First Name" v-model="registerForm.firstName"></el-input>
+          <el-input
+            placeholder="First Name"
+            v-model="registerForm.firstName"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="lastName">
-          <el-input placeholder="Last Name" v-model="registerForm.lastName"></el-input>
+          <el-input
+            placeholder="Last Name"
+            v-model="registerForm.lastName"
+          ></el-input>
         </el-form-item>
       </div>
       <div class="item-input">
         <el-form-item prop="email">
-          <el-input type="email" placeholder="Email" v-model="registerForm.email"></el-input>
+          <el-input
+            type="email"
+            placeholder="Email"
+            v-model="registerForm.email"
+          ></el-input>
         </el-form-item>
       </div>
       <div class="item-input">
@@ -21,16 +31,26 @@
       </div>
       <div class="item-input">
         <el-form-item prop="pass">
-          <el-input type="password" placeholder="Create password" v-model="registerForm.pass"></el-input>
+          <el-input
+            type="password"
+            placeholder="Create password"
+            v-model="registerForm.pass"
+          ></el-input>
         </el-form-item>
       </div>
       <div class="item-input">
         <el-form-item prop="checkPass">
-          <el-input type="password" placeholder="Confirm password" v-model="registerForm.checkPass"></el-input>
+          <el-input
+            type="password"
+            placeholder="Confirm password"
+            v-model="registerForm.checkPass"
+          ></el-input>
         </el-form-item>
       </div>
       <div class="item-input">
-        <el-checkbox label="I agree with our Terms and Conditions"></el-checkbox>
+        <el-checkbox
+          label="I agree with our Terms and Conditions"
+        ></el-checkbox>
       </div>
       <div class="item-input">
         <el-button @click="onRegister">Register</el-button>
@@ -138,6 +158,10 @@ export default {
 .item-input {
   padding: 0px 107px;
   margin-bottom: 16px;
+  .el-button {
+    width: 406px;
+    height: 56px;
+  }
 }
 .item-group {
   display: flex;

@@ -1,7 +1,7 @@
 <template>
   <div class="itemUpcomingClassesProfile">
     <div class="itemUpcomingClassesProfile__user">
-      <div class="itemUpcomingClassesProfile__time">
+      <div class="row itemUpcomingClassesProfile__time">
         <div class="itemUpcomingClassesProfile__time--calendar">
           <font-awesome-icon :icon="['fas', 'calendar-alt']" />
         </div>
@@ -10,27 +10,30 @@
           <p class="time">9:00am - 10:00am</p>
         </div>
       </div>
-      <div class="itemUpcomingClassesProfile__information">
+      <div class="row itemUpcomingClassesProfile__information">
         <el-avatar :size="36">
-          <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png" />
+          <img
+            src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
+          />
         </el-avatar>
         <div class="name">
-          <h4>Hugo</h4>
+          <h4>Hugooo</h4>
         </div>
         <div class="object">
           <h4>Tennis</h4>
         </div>
       </div>
-      <p class="schoolName">Vida Tennis school</p>
-      <p class="teacherName">w/ Mark Connor</p>
-      <div class="itemUpcomingClassesProfile__eventPreviousClasses">
-        <el-button type="primary" v-if="false">Book again</el-button>
-        <el-button type="primary" v-if="false">Review</el-button>
-      </div>
+      <p class="row schoolName">Vida Tennis school</p>
+      <p class="row teacherName">w/ Mark Connor</p>
+      <el-button type="primary" class="row btnCancel">Cancel</el-button>
+      <!-- <div class="itemUpcomingClassesProfile__eventPreviousClasses">
+        <el-button type="primary" v-if="true">Book again</el-button>
+        <el-button type="primary" v-if="true">Review</el-button>
+      </div> -->
     </div>
-    <div class="itemUpcomingClassesProfile__eventUpcomingClasses">
+    <!-- <div class="itemUpcomingClassesProfile__eventUpcomingClasses">
       <el-button type="primary" class="btnCancel">Cancel</el-button>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -39,7 +42,7 @@ export default {};
 <style scoped lang="scss">
 @import "../assets/scss/variables.scss";
 .itemUpcomingClassesProfile {
-  @include sizeForm(100%, 202px);
+  @include sizeForm(100%, 100%);
   background-color: $inputColor;
   border: 1px solid $inputColor;
   border-radius: 10px;
@@ -52,9 +55,12 @@ export default {};
   .itemUpcomingClassesProfile__user {
     display: flex;
     flex-direction: column;
-    padding: 16px 0px 16px 16px;
+    padding: 16px;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
+    .row{
+      margin: 4px 0px;
+    }
     .itemUpcomingClassesProfile__time {
       display: flex;
       .itemUpcomingClassesProfile__time--calendar {
@@ -74,11 +80,9 @@ export default {};
     .itemUpcomingClassesProfile__information {
       display: flex;
       align-items: center;
-      width: 80%;
+      justify-content: flex-start;
       h4 {
-        font-size: 62.5%;
-        padding: 0px 5px;
-        font-size: 1.2rem;
+        padding: 0px 10px;
       }
       .name {
         border-right: 2px solid black;
@@ -86,32 +90,24 @@ export default {};
       .object {
         color: $btnColor;
       }
-      .el-avatar{
-          width: 100px;
+      .el-avatar {
+        width: 100px;
       }
     }
-    .itemUpcomingClassesProfile__eventPreviousClasses {
+    .btnCancel{
+      width: 84px;
+      height: 40px;
       display: flex;
-      justify-content: space-between;
-      .el-button {
-        //   width: 100px;
-        // font-size: 62.5%;
-        // width: 14.2rem;
-        // height: 4.0rem;
-      }
+      // align-items : flex-end;
+      align-self: flex-end;
     }
   }
-  .itemUpcomingClassesProfile__eventUpcomingClasses {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    padding: 0px 16px 16px 0px;
-    height: 200px;
-    .el-button {
-        // font-size: 62.5%;
-        // width: 80%;
-        // height: 20%;
-    }
-  }
+  // .itemUpcomingClassesProfile__eventUpcomingClasses {
+  //   display: flex;
+  //   flex-direction: column-reverse;
+  //   justify-content: flex-start;
+  //   padding: 0px 16px 16px 0px;
+  //   height: 200px;
+  // }
 }
 </style>

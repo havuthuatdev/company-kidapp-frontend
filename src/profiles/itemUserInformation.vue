@@ -17,9 +17,15 @@ export default {};
 <style scoped lang="scss">
 .itemUserInformation{
     display: flex;
-    margin: 48px 0px;
+    // margin: 48px 0px;
     .itemUserInformation__avatar{
         margin-right: 15px;
+    }
+    .itemUserInformation__name{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 }
 </style>

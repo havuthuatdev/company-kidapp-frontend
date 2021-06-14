@@ -32,22 +32,22 @@ export default {};
     display: flex;
     padding: 16px;
     justify-content: space-between;
-    height: 81%;
+    height: 100%;
     .itemPasses__flex--information {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      .amount{
-          color: #409EFF;
+      .amount {
+        color: #409eff;
       }
     }
     .itemPasses__flex--event {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      .el-button{
-          border: 1px solid $btnColor;
-          background-color: $btnColor;
+      .el-button {
+        border: 1px solid $btnColor;
+        background-color: $btnColor;
       }
     }
   }

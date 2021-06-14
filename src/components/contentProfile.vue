@@ -6,7 +6,7 @@
         <!-- <el-link class="link_viewAll" type="primary">View All</el-link> -->
         <el-button type="primary">Add a child</el-button>
       </div>
-      <el-carousel trigger="click"  interval="0" arrow="always">
+      <el-carousel trigger="click" height="200px" interval="0" arrow="always">
         <el-carousel-item v-for="item in 3" :key="item">
           <el-row :gutter="24">
             <el-col :span="6" :xl="6" :lg="6" :md="6" :sm="24" :xs="24">
@@ -60,6 +60,9 @@
               <item-upcoming-classes-profile />
             </el-col>
           </el-row>
+          <div class="viewmore">
+            <el-button class="btnViewmore">view more</el-button>
+          </div>
         </div>
       </el-tab-pane>
       <el-tab-pane label="Passes" name="second">
@@ -120,24 +123,24 @@
           </div>
           <el-row :gutter="24">
             <el-col :span="8" :xl="8" :lg="8" :md="24" :sm="24" :xs="24">
-              <item-upcoming-classes-profile/>
+              <item-upcoming-classes-profile />
             </el-col>
             <el-col :span="8" :xl="8" :lg="8" :md="24" :sm="24" :xs="24">
-              <item-upcoming-classes-profile/>
+              <item-upcoming-classes-profile />
             </el-col>
             <el-col :span="8" :xl="8" :lg="8" :md="24" :sm="24" :xs="24">
-              <item-upcoming-classes-profile/>
+              <item-upcoming-classes-profile />
             </el-col>
           </el-row>
           <el-row :gutter="24">
             <el-col :span="8" :xl="8" :lg="8" :md="24" :sm="24" :xs="24">
-              <item-upcoming-classes-profile/>
+              <item-upcoming-classes-profile />
             </el-col>
             <el-col :span="8" :xl="8" :lg="8" :md="24" :sm="24" :xs="24">
-              <item-upcoming-classes-profile/>
+              <item-upcoming-classes-profile />
             </el-col>
             <el-col :span="8" :xl="8" :lg="8" :md="24" :sm="24" :xs="24">
-              <item-upcoming-classes-profile/>
+              <item-upcoming-classes-profile />
             </el-col>
           </el-row>
         </div>
@@ -166,18 +169,27 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "../assets/scss/variables.scss";
-// .contentApp {
-//   margin: 0px 220px;
+// .upcomingClasses{
+//   display: flex;
 // }
-.link_viewAll {
-  //   margin-right: 110px;
-}
 .title__group {
   display: flex;
   justify-content: space-between;
-  .el-button{
-      width: 124px;
-      height: 40px;
+  align-items: center;
+  .el-button {
+    width: 124px;
+    height: 40px;
+  }
+}
+.viewmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .el-button {
+    width: 176px;
+    height: 48px;
+    border: 1px solid $btnColor;
+    // background-color: $btnColor;
   }
 }
 .el-col.el-col-6 {

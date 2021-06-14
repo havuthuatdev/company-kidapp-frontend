@@ -3,7 +3,9 @@
     <div class="item__children__flex">
       <div class="item__children--information">
         <el-avatar :size="72" src="https://empty">
-          <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png" />
+          <img
+            src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
+          />
         </el-avatar>
         <div class="information--group">
           <h2>Hugo</h2>
@@ -35,23 +37,19 @@ export default {};
     .item__children--information {
       display: flex;
       align-items: center;
-      .information--group {
-        margin-left: 15px;
+      width: 150px;
+      justify-content: space-between;
+    }
+    .item__children--edit {
+      .el-button {
+        width: 140px;
+        height: 40px;
       }
     }
-    .item__children--edit{
-        .el-button{
-            width: 140px;
-            height: 40px;
-        }
-    }
   }
-
-  // padding: 16px;
 }
 h2,
 p {
   margin: 0px;
-//   font-size: 1.2rem;
 }
 </style>

@@ -8,13 +8,10 @@ import VueTelInput from 'vue-tel-input'
 import 'vue-tel-input/dist/vue-tel-input.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faHeart, faStar, faEnvelope, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-// import {  } from '@fortawesome/free-solid-svg-icons'
-// import {  } from '@fortawesome/free-solid-svg-icons'
-// import {  } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faHeart, faStar, faEnvelope, faCalendarAlt, faChevronLeft, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserSecret, faHeart, faStar, faEnvelope, faCalendarAlt)
+library.add(faUserSecret, faHeart, faStar, faEnvelope, faCalendarAlt, faChevronLeft, faCamera)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
