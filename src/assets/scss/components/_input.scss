@@ -1,0 +1,10 @@
+@mixin input(){
+    border: 1px solid $greenColor;
+    font-size: 15px;
+    border-radius: 10px;
+    height: 56px;
+    background-color: $greyColor;
+    &:hover{
+        border: 1px solid $greenColor;
+    }
+}

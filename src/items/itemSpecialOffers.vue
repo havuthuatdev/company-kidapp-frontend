@@ -12,10 +12,11 @@
 export default {};
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
+// @import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
 .item__specialOffers {
   @include sizeForm(100%, 138px);
-  @include item();
+  @include backgroudItem();
 //   margin: 12px 0px;
   align-items: center;
   &-group {

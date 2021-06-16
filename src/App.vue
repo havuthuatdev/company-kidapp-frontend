@@ -14,14 +14,14 @@
     <!-- <item-children /> -->
     <!-- <item-upcoming-classes-profile /> -->
     <!-- <item-passes/> -->
-    <!-- <profile/> -->
-    <setting-profile />
+    <profile/>
+    <!-- <setting-profile /> -->
   </div>
 </template>
 
 <script>
-import SettingProfile from './pages/settingProfile.vue';
-// import Profile from './pages/Profile.vue'
+// import SettingProfile from './pages/settingProfile.vue';
+import Profile from './pages/Profile.vue'
 // import ItemPasses from './profiles/itemPasses.vue'
 // import ItemUpcomingClassesProfile from './profiles/itemUpcomingClassesProfile.vue'
 // import ItemChildren from './profiles/itemChildren.vue'
@@ -41,11 +41,11 @@ import SettingProfile from './pages/settingProfile.vue';
 export default {
   name: "App",
   components: {
-    SettingProfile
+    // SettingProfile
     // Register
     // Login,
     //   HeaderApp
-    // Profile
+    Profile
     // ItemUpcomingClassesProfile
     // ItemPasses
     // ItemChildren

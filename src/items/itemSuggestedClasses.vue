@@ -3,46 +3,36 @@
     <div class="item_suggestedClasses__flex">
       <div class="item-left item_suggestedClasses__flex--group">
         <div class="item-div item-suggestedClasses__flex--group--datetime">
-          <p class="item-suggestedClasses__flex--group--datetime--oclock">
-            5:15PM
-          </p>
-          <p class="item-suggestedClasses__flex--group--datetime--seconds">
-            (45mins)
-          </p>
+          <p>5:15PM</p>
+          <p>(45mins)</p>
         </div>
-        <div class="item-suggestedClasses__flex--group--rate">
+        <div class="item_suggestedClasses__flex--group--rate">
           <font-awesome-icon class="icon-star" :icon="['fas', 'star']" />
-          <p class="item-suggestedClasses__flex--group--rate--number">
-            4.8 (23)
-          </p>
+          <p>4.8</p>
+          <p>(23)</p>
         </div>
-        <div class="item-suggestedClasses__flex--group--price">
-          <h4 class="item-suggestedClasses__flex--group--price--dolar">$150</h4>
-          <h5 class="item-suggestedClasses__flex--group--price--lesson">
-            per lesson
-          </h5>
+        <div class="item_suggestedClasses__flex--group--price">
+          <h4>$150</h4>
+          <h5>per lesson</h5>
         </div>
       </div>
       <div class="item-right item_suggestedClasses__flex--group">
         <div class="item_suggestedClasses__flex--group--information">
-          <h4 class="item_suggestedClasses__flex--group--information--subject">
-            Tennis
-          </h4>
-          <p class="item_suggestedClasses__flex--group--information--address">
-            ABC Tennis Camberwell - 1.5km
-          </p>
-          <p class="item_suggestedClasses__flex--group--information--teacher">
-            w/Danny Smith
-          </p>
+          <h4>Tennis</h4>
+          <p>ABC Tennis Camberwell - 1.5km</p>
+          <p>w/Danny Smith</p>
         </div>
         <div class="item_suggestedClasses__flex--group--booking">
-          <p class="item_suggestedClasses__flex--group--booking--slot">
-            3 slots avaliable
-          </p>
-          <div class="email">
-            <font-awesome-icon class="icon-email" :icon="['fas', 'envelope']" />
+          <p>3 slots avaliable</p>
+          <div class="group">
+            <div class="email">
+              <font-awesome-icon
+                class="icon-email"
+                :icon="['fas', 'envelope']"
+              />
+            </div>
+            <el-button type="primary">Book</el-button>
           </div>
-          <el-button type="primary">Book</el-button>
         </div>
       </div>
     </div>
@@ -52,20 +42,16 @@
 export default {};
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
 .item_suggestedClasses {
   @include sizeForm(100%, 154px);
-  //   margin: 12px 0px;
-  align-items: center;
-  background-color: $inputColor;
-  border: 1px solid $inputColor;
-  border-radius: 10px;
+  @include backgroudItem();
   p,
   h4,
   h5 {
     margin: 0px;
   }
-  .item_suggestedClasses__flex {
+  &__flex {
     display: flex;
     margin: 16px;
     height: 80%;
@@ -91,21 +77,27 @@ export default {};
         margin: 0px 5px;
       }
     }
-    .item_suggestedClasses__flex--group {
+    &--group {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      .item-suggestedClasses__flex--group--rate {
+      &--rate {
         display: flex;
+        p {
+          padding: 0 2px;
+        }
         //   justify-content: space-around;
       }
-      .item_suggestedClasses__flex--group--booking {
+      &--booking {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        .group {
+          display: flex;
+        }
       }
-      .item-suggestedClasses__flex--group--price {
+      &--price {
         color: #d02760;
       }
     }

@@ -1,18 +1,18 @@
 <template>
-  <div class="item_favourite">
+  <div class="item">
     <div class="item__favourite">
-      <div class="profile__item">
+      <div class="item__favourite--profile">
         <div class="profile__item-img">
           <el-avatar shape="square" :size="48"></el-avatar>
         </div>
         <div class="profile__item-title">
-          <h5>aaaaaa</h5>
+          <h4>aaaaaa</h4>
         </div>
       </div>
       <div class="favourite__icon">
         <font-awesome-icon
           :icon="['fas', 'heart']"
-          v-bind:style="{color: activeColor}"
+          v-bind:style="{ color: activeColor }"
           @click="onFavourite"
         />
       </div>
@@ -42,36 +42,27 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
-.item_favourite {
+// @import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
+.item {
   @include sizeForm(100%, 140px);
-//   @include item();
-//   margin: 12px 0px;
-  background-color: $inputColor;
-  border: 1px solid $inputColor;
-  border-radius: 10px;
-}
-.item__favourite {
-  display: flex;
-  margin: 16px;
-  justify-content: space-between;
-  .profile__item {
+  @include backgroudItem();
+  &__favourite {
     display: flex;
-    flex-direction: column;
+    margin: 16px;
     justify-content: space-between;
-    height: 108px;
+    &--profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 108px;
+      h4 {
+        margin: 0px;
+      }
+    }
+    .svg-inline--fa {
+      color: #eb5757;
+    }
   }
-  h5 {
-    margin: 0px;
-  }
-  //   .favourite__icon {
-  //     padding: 16px 0px;
-  //   }
-  .svg-inline--fa {
-    color: #eb5757;
-  }
-  //   .svg-inline--fa {
-  //     color: black;
-  //   }
 }
 </style>

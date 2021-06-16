@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="register">
     <el-form :model="registerForm" :rules="rules">
       <div class="item-input item-group">
         <el-form-item prop="firstName">
@@ -25,7 +25,8 @@
         </el-form-item>
       </div>
       <div class="item-input">
-        <el-form-item prop="email">
+        <el-form-item prop="phone">
+          <!-- <vue-tel-input v-model="registerForm.phone"></vue-tel-input> -->
           <vue-tel-input v-model="registerForm.phone"></vue-tel-input>
         </el-form-item>
       </div>
@@ -63,6 +64,11 @@
   </div>
 </template>
 <script>
+// phone number
+import Vue from "vue";
+import VueTelInput from "vue-tel-input";
+import "vue-tel-input/dist/vue-tel-input.css";
+Vue.use(VueTelInput);
 export default {
   data() {
     var validatePass = (rule, value, callback) => {
@@ -145,123 +151,92 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
-.container {
-  display: flex;
-  justify-content: center;
-}
-.el-form {
-  @include sizeForm(620px, 773px);
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-  // @include bgc();
-}
-.item-input {
-  padding: 0px 107px;
-  margin-bottom: 16px;
-  .el-button {
-    width: 406px;
-    height: 56px;
+@import "../assets/scss/main";
+.register {
+  @include fullScreen();
+  @include flexCenter();
+  .el-form {
+    @include sizeForm(620px, 773px);
+    box-shadow: $box-shadow;
+    .item-group {
+      display: flex;
+      justify-content: space-between;
+      .el-input {
+        width: 191px;
+        padding-top: 63px;
+      }
+    }
+    .item-input {
+      padding: 0px 107px;
+      margin-bottom: 16px;
+      .el-form-item {
+        margin: 0px;
+      }
+      /deep/ .el-input__inner {
+        @include input();
+      }
+      .el-checkbox {
+        display: flex;
+        // justify-content: flex-start;
+      }
+      .el-button {
+        @include sizeForm(100%, 56px);
+        @include button();
+        margin-bottom: 94px;
+      }
+      .vue-tel-input {
+        border: 1px solid white;
+        @include sizeForm(100%, 56px);
+        ::placeholder {
+          color: #c0c4cc;
+          text-indent: 15px;
+          font-size: 16px;
+        }
+        &:focus-within {
+          border-color: white;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+        /deep/ .vti__dropdown {
+          @include sizeForm(84px, 56px);
+          padding: 0px;
+          border: 1px solid $greenColor;
+          background-color: $greyColor;
+          border-radius: 10px;
+        }
+        /deep/ .vti__input {
+          // justify-content: flex-end;
+          @include sizeForm(298px, 56px);
+          border: 1px solid $greenColor;
+          background-color: $greyColor;
+          border-radius: 10px;
+          padding: 0px;
+          margin-left: 52px;
+          text-indent: 15px;
+        }
+        /deep/ .vti__selection {
+          padding: 0px 15px;
+        }
+      }
+    }
+    .aready {
+      display: flex;
+      justify-content: center;
+      /deep/ .el-link--inner {
+        color: $orangeColor;
+      }
+      .el-link.is-underline:hover:after {
+        border-bottom: none;
+      }
+      .el-link {
+        font-size: 16px;
+        margin-left: 5px;
+      }
+    }
   }
 }
-.item-group {
-  display: flex;
-  justify-content: space-between;
-}
-.el-form-item {
-  margin: 0px;
-}
-/deep/ .el-input__inner {
-  height: 56px;
-  border: 1px solid #f0f0f0;
-  border-radius: 10px;
-  background: #f0f0f0;
-  // border: 1px solid #00755F;
 
-  // @include sizeForm(406px, 56px);
-}
-
-.item-group {
-  .el-input {
-    width: 191px;
-    padding-top: 63px;
-  }
-}
-.el-checkbox {
-  display: flex;
-  justify-content: flex-start;
-}
-.el-button {
-  @include sizeForm(100%, 56px);
-  border: 1px solid #f0f0f0;
-  border-radius: 10px;
-  background-color: $btnColor;
-  color: #f0f0f0;
-  margin-bottom: 94px;
-  margin-top: 44px;
-}
-.el-button:hover {
-  @extend .el-button;
-}
-.el-button:focus {
-  @extend .el-button;
-}
-/deep/ .el-link--inner {
-  color: $btnColor;
-}
-// phone number input
-/deep/ .vti__dropdown-list.below {
-  font-size: 14px;
-  width: 200px;
-}
-.vue-tel-input {
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: white;
-  @include sizeForm(100%, 56px);
-  ::placeholder {
-    color: #c0c4cc;
-    text-indent: 15px;
-  }
-}
-
-/deep/ .vue-tel-input:focus-within {
-  border-color: white;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-/deep/ .vti__dropdown {
-  @include sizeForm(84px, 56px);
-  padding: 0px;
-  border: 0px solid #f0f0f0;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-}
-/deep/ .vti__input {
-  justify-content: flex-end;
-  @include sizeForm(298px, 56px);
-  border: 0px solid #f0f0f0;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  padding: 0px;
-  margin-left: 52px;
-  text-indent: 15px;
-}
-
-/deep/ .vti__selection {
-  padding: 0px 15px;
-}
-.aready {
-  display: flex;
-  justify-content: center;
-}
-/deep/ .is-checked {
-  color: red;
-}
-.el-link.is-underline:hover:after {
-  border-bottom: none;
-}
-.el-link {
-  font-size: 16px;
-  margin-left: 5px;
-}
+// /deep/.country-selector__label {
+//   display: none;
+// }
 </style>
