@@ -1,13 +1,15 @@
 @mixin button {
     border: 1px solid $orangeColor;
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: $orangeColor;
     margin: 0px;
-    font-size: 17px;
+    height: 40px;
+    font-size: 16px;
     color: white;
     &:hover, &:focus{
         border: 1px solid $orangeColor;
         background-color: $orangeColor;
+        color: white;
     }
 }
 

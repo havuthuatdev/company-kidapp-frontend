@@ -1,9 +1,8 @@
 <template>
-  <div class="contentApp">
+  <div class="content__profile">
     <div class="item favourites">
       <div class="title__group">
         <h2 class="title">Children</h2>
-        <!-- <el-link class="link_viewAll" type="primary">View All</el-link> -->
         <el-button type="primary">Add a child</el-button>
       </div>
       <el-carousel trigger="click" height="200px" interval="0" arrow="always">
@@ -25,7 +24,7 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <el-tabs v-model="activeName">
+    <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="Upcoming classes" name="first">
         <div class="item upcomingClasses">
           <div class="title__group">
@@ -157,6 +156,12 @@ import ItemChildren from "../profiles/itemChildren.vue";
 import ItemPasses from "../profiles/itemPasses.vue";
 import ItemUpcomingClassesProfile from "../profiles/itemUpcomingClassesProfile.vue";
 export default {
+  data() {
+    return {
+      // tab đầu tiên
+      activeName: "first",
+    };
+  },
   components: {
     // ItemFavourite,
     // ItemSpecialOffers,
@@ -165,40 +170,48 @@ export default {
     ItemUpcomingClassesProfile,
     ItemPasses,
   },
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
+    },
+  },
 };
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
-// .upcomingClasses{
-//   display: flex;
-// }
-.title__group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .el-button {
-    width: 124px;
-    height: 40px;
+// @import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
+.content__profile {
+  .title__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 30px;
+    //   font-family: "Segoe UI";
+    }
+    .el-button {
+      width: 124px;
+      height: 40px;
+    }
   }
-}
-.viewmore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .el-button {
-    width: 176px;
-    height: 48px;
-    border: 1px solid $btnColor;
-    // background-color: $btnColor;
+  .viewmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .el-button {
+      width: 176px;
+      height: 48px;
+      border: 1px solid $orangeColor;
+    }
   }
-}
-.el-col.el-col-6 {
-  padding: 12px;
-}
-.el-col.el-col-8 {
-  padding: 12px;
-}
-.el-tabs {
-  margin-top: 48px;
+  .el-tabs {
+    margin-top: 48px;
+    /deep/ .el-tabs__item {
+      font-size: 18px;
+    }
+    .el-col {
+      padding: 12px;
+    }
+  }
 }
 </style>

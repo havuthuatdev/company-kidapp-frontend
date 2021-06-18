@@ -45,7 +45,7 @@ export default {
 // @import "../assets/scss/variables.scss";
 @import "../assets/scss/main";
 .item {
-  @include sizeForm(100%, 140px);
+  @include sizeForm(100%, 100%);
   @include backgroudItem();
   &__favourite {
     display: flex;

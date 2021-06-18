@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
 .group {
   display: flex;
   justify-content: space-between;
@@ -101,8 +101,9 @@ export default {
 }
 .el-button {
   width: 144px;
-  height: 40px;
-  border: 1px solid $btnColor;
-  background-color: $btnColor;
+  @include button();
+}
+.el-form {
+  width: 400px;
 }
 </style>

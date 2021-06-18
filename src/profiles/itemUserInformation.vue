@@ -2,12 +2,14 @@
   <div class="itemUserInformation">
     <div class="itemUserInformation__avatar">
       <el-avatar :size="124" src="https://empty">
-        <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png" />
+        <img
+          src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
+        />
       </el-avatar>
     </div>
     <div class="itemUserInformation__name">
-        <h2>Ann Nguyen</h2>
-        <el-button type="primary">Profile setting</el-button>
+      <h2>Ann Nguyen</h2>
+      <el-button type="primary">Profile setting</el-button>
     </div>
   </div>
 </template>
@@ -15,17 +17,24 @@
 export default {};
 </script>
 <style scoped lang="scss">
-.itemUserInformation{
+@import "../assets/scss/main";
+.itemUserInformation {
+  display: flex;
+  &__avatar {
+    margin-right: 15px;
+  }
+  &__name {
     display: flex;
-    // margin: 48px 0px;
-    .itemUserInformation__avatar{
-        margin-right: 15px;
+    flex-direction: column;
+    justify-content: center;
+    .el-button {
+      width: 148px;
+      margin: 4px 0px;
     }
-    .itemUserInformation__name{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    h2 {
+      font-size: 30px;
+      margin: 4px 0px;
     }
+  }
 }
 </style>

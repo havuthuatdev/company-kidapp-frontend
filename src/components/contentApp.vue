@@ -125,9 +125,9 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/scss/variables.scss";
-.contentApp {
-  margin: 0px 220px;
-}
+// .contentApp {
+//   margin: 0px 220px;
+// }
 .link_viewAll {
   //   margin-right: 110px;
 }

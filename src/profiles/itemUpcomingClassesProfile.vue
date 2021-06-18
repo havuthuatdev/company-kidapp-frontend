@@ -1,16 +1,16 @@
 <template>
   <div class="itemUpcomingClassesProfile">
     <div class="itemUpcomingClassesProfile__user">
-      <div class="row itemUpcomingClassesProfile__time">
-        <div class="itemUpcomingClassesProfile__time--calendar">
+      <div class="row itemUpcomingClassesProfile__user__time">
+        <div class="itemUpcomingClassesProfile__user__time--calendar">
           <font-awesome-icon :icon="['fas', 'calendar-alt']" />
         </div>
-        <div class="itemUpcomingClassesProfile__time--datetime">
+        <div class="itemUpcomingClassesProfile__user__time--datetime">
           <p class="date">Tue, May 12,2021</p>
           <p class="time">9:00am - 10:00am</p>
         </div>
       </div>
-      <div class="row itemUpcomingClassesProfile__information">
+      <div class="row itemUpcomingClassesProfile__user__information">
         <el-avatar :size="36">
           <img
             src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
@@ -24,15 +24,17 @@
         </div>
       </div>
       <p class="row schoolName">Vida Tennis school</p>
-      <p class="row teacherName">w/ Mark Connor</p>
-      <el-button type="primary" class="row btnCancel">Cancel</el-button>
+      <div class="flex">
+        <p class="row teacherName">w/ Mark Connor</p>
+        <el-button type="primary" class="btnCancel">Cancel</el-button>
+      </div>
+      <!-- <el-button type="primary" class="row btnCancel">Cancel</el-button> -->
       <!-- <div class="itemUpcomingClassesProfile__eventPreviousClasses">
         <el-button type="primary" v-if="true">Book again</el-button>
         <el-button type="primary" v-if="true">Review</el-button>
       </div> -->
     </div>
     <!-- <div class="itemUpcomingClassesProfile__eventUpcomingClasses">
-      <el-button type="primary" class="btnCancel">Cancel</el-button>
     </div> -->
   </div>
 </template>
@@ -40,47 +42,55 @@
 export default {};
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
 .itemUpcomingClassesProfile {
   @include sizeForm(100%, 100%);
-  background-color: $inputColor;
-  border: 1px solid $inputColor;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
+  @include backgroudItem();
   h4,
   p {
     margin: 0;
   }
-  .itemUpcomingClassesProfile__user {
+  &__user {
     display: flex;
     flex-direction: column;
     padding: 16px;
     justify-content: space-between;
     width: 100%;
-    .row{
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .el-button {
+        // width: 10px;
+        @include button();
+        width: 35%;
+        // background-color: ;
+      }
+    }
+    .row {
       margin: 4px 0px;
     }
-    .itemUpcomingClassesProfile__time {
+    &__time {
       display: flex;
-      .itemUpcomingClassesProfile__time--calendar {
+      align-items: center;
+      &--calendar {
         display: flex;
         @include sizeForm(48px, 48px);
         background-color: white;
         justify-content: center;
         align-items: center;
       }
-      .itemUpcomingClassesProfile__time--datetime {
+      &--datetime {
         margin-left: 5px;
         p {
-          padding: 3px;
+          padding: 2px;
         }
       }
     }
-    .itemUpcomingClassesProfile__information {
+    &__information {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
       h4 {
         padding: 0px 10px;
       }
@@ -88,18 +98,8 @@ export default {};
         border-right: 2px solid black;
       }
       .object {
-        color: $btnColor;
+        color: $orangeColor;
       }
-      .el-avatar {
-        width: 100px;
-      }
-    }
-    .btnCancel{
-      width: 84px;
-      height: 40px;
-      display: flex;
-      // align-items : flex-end;
-      align-self: flex-end;
     }
   }
   // .itemUpcomingClassesProfile__eventUpcomingClasses {

@@ -22,7 +22,7 @@
           <p>ABC Tennis Camberwell - 1.5km</p>
           <p>w/Danny Smith</p>
         </div>
-        <div class="item_suggestedClasses__flex--group--booking">
+        <!-- <div class="item_suggestedClasses__flex--group--booking">
           <p>3 slots avaliable</p>
           <div class="group">
             <div class="email">
@@ -33,7 +33,7 @@
             </div>
             <el-button type="primary">Book</el-button>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -64,10 +64,12 @@ export default {};
     }
     .item-right {
       margin-left: 16px;
-      width: 100%;
+      height: 100%;
+      // width: 100%;
       p,
       h4 {
-        margin-bottom: 5px;
+        margin: 0px;
+        // margin-bottom: 5px;
       }
       .email {
         padding: 11px;
@@ -95,6 +97,13 @@ export default {};
         width: 100%;
         .group {
           display: flex;
+          width: 50%;
+          .email {
+            width: 30%;
+          }
+          .el-button {
+            width: 70%;
+          }
         }
       }
       &--price {

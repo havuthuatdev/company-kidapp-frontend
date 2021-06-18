@@ -17,37 +17,38 @@
 export default {};
 </script>
 <style scoped lang="scss">
-@import "../assets/scss/variables.scss";
+@import "../assets/scss/main";
 .itemPasses {
-  background-color: $inputColor;
   @include sizeForm(100%, 169px);
-  border: 1px solid $inputColor;
-  border-radius: 10px;
+  @include backgroudItem();
   h4,
   h5,
   p {
     margin: 0px;
   }
-  .itemPasses__flex {
+  &__flex {
     display: flex;
     padding: 16px;
     justify-content: space-between;
     height: 100%;
-    .itemPasses__flex--information {
+    &--information {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 70%;
       .amount {
         color: #409eff;
       }
     }
-    .itemPasses__flex--event {
+    &--event {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      width: 30%;
       .el-button {
-        border: 1px solid $btnColor;
-        background-color: $btnColor;
+        border: 1px solid $orangeColor;
+        background-color: $orangeColor;
+        width: 100%;
       }
     }
   }

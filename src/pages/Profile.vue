@@ -4,7 +4,9 @@
       <header-app />
     </el-header>
     <el-main>
-      <item-user-information />
+      <div class="user">
+        <item-user-information />
+      </div>
       <content-profile />
     </el-main>
   </el-container>
@@ -23,7 +25,14 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "../assets/scss/variables.scss";
-.el-main {
+.el-container {
   margin: 0px 220px;
+  .el-header {
+  }
+  .el-main {
+    .user {
+      margin: 48px 0px;
+    }
+  }
 }
 </style>
